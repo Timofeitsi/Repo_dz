@@ -24,11 +24,11 @@ def my_f1():
     return x / y
 
 
-print(f'Результат - {my_f2()}\n')
+print(f'Результат - {my_f1()}\n')
 
 # Правильное решение засунуть в один цикл
 
-def my_f1():
+def my_f2():
     while True:
         try:
             x = int(input("Введите делимое: "))
