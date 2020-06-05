@@ -24,4 +24,24 @@ def my_f1():
     return x / y
 
 
-print(f'Результат - {my_f1()}\n')
+print(f'Результат - {my_f2()}\n')
+
+# Правильное решение засунуть в один цикл
+
+def my_f1():
+    while True:
+        try:
+            x = int(input("Введите делимое: "))
+            y = int(input("Введите делитель: "))
+            if y != 0:
+                break
+            else:
+                print("На ноль делить нельзя")
+            continue
+        except ValueError:
+            print("Введенные данные не числовые, попробуйте еще раз")
+
+    return x / y
+
+
+print(f'Результат - {my_f2()}\n')
