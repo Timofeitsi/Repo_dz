@@ -11,7 +11,7 @@ def my_f1():
     while True:
         try:
             x = int(input("Введите положительное целое число: "))
-            if x >= 0:
+            if x > 0:
 #                print(x)
                 break
             else:
