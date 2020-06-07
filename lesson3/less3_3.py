@@ -40,7 +40,7 @@ def my_f2():
         except ValueError:
             print("Введенные данные не числовые, попробуйте еще раз")
         arg.append(var)
-    arg.remove(min(arg))
+    arg.remove(min(arg)) # arg.pop(arg.index(list(min(arg))))
     return sum(arg)
 
 print(f'Сумма двух наибольших аргументов - {my_f2()}')
