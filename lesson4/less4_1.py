@@ -7,3 +7,10 @@ from sys import argv
 
 scr_name, time_in_hours, tarif, bonus = argv
 print(int(time_in_hours) * int(tarif) + int(bonus))
+'''
+try:
+time, stavka, premia = map(int, argv[1:])
+print(f'salary - {time*stavka + premia})
+except:
+ValueError
+'''

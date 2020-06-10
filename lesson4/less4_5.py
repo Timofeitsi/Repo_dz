@@ -19,3 +19,8 @@ print(result)
 
 result1 = reduce(lambda a, x : a * x, [el for el in range(100, 1001) if el % 2 == 0])
 print(result1)
+
+# result = reduce(reducer_f, [el for el in range(100, 1001, 2)])
+
+
+# result1 = reduce(lambda a, x : a * x, [el for el in range(100, 1001, 2)])
