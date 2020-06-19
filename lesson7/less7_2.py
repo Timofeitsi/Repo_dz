@@ -1,9 +1,12 @@
 from abc import ABC, abstractmethod
 
 class Clothes(ABC):
-    def __init__(self):
-        self.size = size
-        self.height = height
+    total_expense = []
+
+    @staticmethod
+    def total_exp():
+        print(f'Общий расход ткани на все изделия, м - {round(sum(Clothes.total_expense), 2)}')
+        #return round(sum(Clothes.total_expense), 2)
 
     @abstractmethod
     def expense_coat(self):
@@ -16,6 +19,9 @@ class Clothes(ABC):
 class Coat(Clothes):
     def __init__(self, size):
         self.size = size
+        model_expense = super().expense_coat()
+        to_sklag = super().total_expense
+        to_sklag.append(model_expense)
     @property
     def size(self):
         return self.__size
@@ -32,19 +38,30 @@ class Coat(Clothes):
     def expense_costum(self):
         pass
     def expense_coat(self):
-        return super().expense_coat()
+        print(f'Расход ткани на изделие, м - {super().expense_coat()}')
+        # return super().expense_coat()
 
 class Costum(Clothes):
     def __init__(self, height):
         self.height = height
+        model_expense = super().expense_costum()
+        to_sklag = super().total_expense
+        to_sklag.append(model_expense)
     @property
     def expense_costum(self):
-        return super().expense_costum()
+        print(f'Расход ткани на изделие, м - {super().expense_costum()}')
+        #return super().expense_costum()
     def expense_coat(self):
         pass
 
 coat_1 = Coat(62)
+coat_1.expense_coat()
+Clothes.total_exp()
+
 costum_1 = Costum(175)
-print(f'Расход ткани на костюм, м -\t {costum_1.expense_costum}')
-print(f'Расход ткани на пальто, м -  {coat_1.expense_coat()}')
-print(f'Общий расход ткани, \tм -\t {round(costum_1.expense_costum + coat_1.expense_coat(), 2)}')
+costum_1.expense_costum
+Clothes.total_exp()
+
+costum_2 = Costum(150)
+costum_2.expense_costum
+Clothes.total_exp()
